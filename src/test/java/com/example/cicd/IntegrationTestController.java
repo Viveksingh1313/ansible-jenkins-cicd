@@ -26,11 +26,11 @@ class IntegrationTestController {
 	void contextLoads() {
 
 		User user = this.restTemplate
-				.getForObject("http://localhost:" + port + "/vehicles/user/1", User.class);
+				.getForObject("http://localhost:" + port + "/v1/user/1", User.class);
 		assertTrue(user.getId()==1);
 
 		User userNegativeTest = this.restTemplate
-				.getForObject("http://localhost:" + port + "/vehicles/user/1", User.class);
+				.getForObject("http://localhost:" + port + "/v1/user/1", User.class);
 
 		assertFalse(userNegativeTest.getId() == 3);
 	}

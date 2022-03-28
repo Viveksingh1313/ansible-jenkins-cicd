@@ -31,9 +31,9 @@ public class TestRestController {
     public void testGetUserById() {
         User u = new User();
         u.setId(1);
-        u.setName("Smartcar");
+        u.setName("Vivek");
         when(userService.getById(1)).thenReturn(u);
         User user = userController.getUser(1);
-        assertEquals("Smartcar", user.getName());
+        assertEquals("Vivek", user.getName());
     }
 }
