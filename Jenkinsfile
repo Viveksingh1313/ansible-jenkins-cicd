@@ -12,11 +12,6 @@ pipeline {
         )
     }
      stages {
-//       stage('git clone') {
-//         steps {
-//           git branch: 'dev', url: 'https://github.com/Viveksingh1313/springboot-test.git'
-//         }
-//       }
           stage('unit test') {
             steps {
                 echo "Environment selected: ${params.envSelected}"
@@ -24,7 +19,7 @@ pipeline {
             }
             post {
                 failure {
-                    mail to: 'viveks@azuga.com',
+                    mail to: 'vivek.sinless@gmail.com',
                         subject: 'Dude your Azuga-RUC Pipeline failed. Check your Unit Tests',
                         body: 'Unit Test Cases Failure'
                 }
@@ -37,7 +32,7 @@ pipeline {
             }
             post {
                 failure {
-                    mail to: 'viveks@azuga.com',
+                    mail to: 'vivek.sinless@gmail.com',
                         subject: 'Dude your Azuga-RUC Pipeline failed. Check your integration tests',
                         body: 'Integration Test Cases Failure'
                 }
